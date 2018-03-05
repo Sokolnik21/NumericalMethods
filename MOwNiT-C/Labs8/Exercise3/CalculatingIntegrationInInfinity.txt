@@ -1,0 +1,8 @@
+/// Exercise 3 \\\
+\\\\\\\\\/////////
+
+function: 1/(x*x + 21)
+Numerical integration calculated on infinity range
+result: 0.685552
+estimated error: 0.000000
+intervals: 3

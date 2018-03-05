@@ -1,0 +1,40 @@
+/// Exercise 1 \\\
+\\\\\\\\\/////////
+
+Differences in numerical integration functions
+function: x*x
+estimated accuracy: 0.001000
+beginning: 0.000000
+ending: 1.000000
+
+**High accuracy result**
+Based on gsl_integration_qags
+result: 0.333333
+estimated error: 0.000000
+intervals: 1
+
+**Rectangle Rule**
+result: 0.332334
+difference from gsl: -0.000999
+intervals: 500
+
+**gsl_integration_qng**
+result: 0.333333
+difference from gsl: 0.000000
+intervals: 21
+
+**gsl_integration_qag**
+GSL_INTEG_GAUSS15(key = 1)
+result: 0.333333
+difference from gsl: -0.000000
+intervals: 1
+
+**gsl_integration_qags**
+result: 0.333333
+difference from gsl: 0.000000
+intervals: 1
+
+**gsl_integration_qagp**
+result: 0.333333
+difference from gsl: 0.000000
+intervals: 1

@@ -1,0 +1,19 @@
+Zadanie:
+Korzystając z biblioteki GSL zaobserwować jak zmienia się cecha i mantysa dla coraz mniejszych liczb.
+Rozwiązanie:
+Zaobserwować, kiedy matysa przestaje być znormalizowana i dlaczego?
+W tym celu napisałem program DenormalizedNumber, w którym wziąłem liczbę 1/3, zapisaną w dokładności float i zacząłem ją dzielić przez 2, przy każdym kroku wypisując jej wartość oraz to jak jest reprezentowaną w postaci binarnej.
+Pierwszy wynik:
+  0.333333
+  1.01010101010101010101011*2^-2
+Istotna zmiana:
+  0.000000
+  1.01010101010101010101011*2^-126
+
+  0.000000
+  0.10101010101010101010110*2^-126
+Obserwacje:
+  1. Przy dzieleniu przez dwa najpierw zmienia się cecha, a dopiero potem mantysa.
+  2. Minimalna wartość cechy dla float to -126
+    2.1. Od razu można tu zawuważyć brak -127, który wynika z tego, że jest to specjalna wartość zarezerwowana na specjalną okazję. A tak na serio to jeżeli wystąpi -127 to kompilator odbierze to za naruszenie flagi i uzna za NaN albo co innego.
+  3. Kiedy skończy się miejsce w cesze na zapis liczby, to zaczyna się zmieniać mantysa. OD TEGO MIEJSCA MÓWI SIĘ O TEJ LICZBIE, ŻE JEST ZDENORMALIZOWANA, co oznacza, że liczba nie posiada już wtedy ukrytej jedynki i mantysa jest wtedy dokładną reprezentacją podstawy.
